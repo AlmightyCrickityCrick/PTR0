@@ -3,7 +3,7 @@ defmodule Task1BonusTest do
   doctest Task1Min
 
   test "prefix" do
-    assert Task1Bonus.commonPrefix(["flower", "flow", "flight"]) == "fl"
+    assert Task1Bonus.commonPrefix(["flower", "flow", "floght"]) == "flo"
     assert Task1Bonus.commonPrefix(["alpha", "beta"]) == ""
   end
 

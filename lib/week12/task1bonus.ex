@@ -100,7 +100,6 @@ def factorize(nr) when rem(nr,2) == 0 do
 end
 
 def factorize(nr) when rem(nr, 2) == 1 do
-  import :math
   if(Task1Min.isPrime(nr) or nr == 3) do
     [nr]
   else
