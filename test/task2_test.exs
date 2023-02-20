@@ -2,14 +2,14 @@ defmodule Task2Test do
   use ExUnit.Case
   doctest Task2
 
-  @tag mustexec: true
+  #@tag mustexec: true
   test "min 1 test" do
     #Spawns an actor that receives a message and prints it
     pid = spawn(Task2, :printingTask, ["Why are we here? Just to suffer?"])
     IO.inspect(pid)
   end
 
-  @tag mustexec: true
+  #@tag mustexec: true
   test "min 2 test with spawn" do
     #Spawns the actors and assigns to it the recursive function listenTask
     pid = spawn(Task2, :listenTask, [])
@@ -32,7 +32,7 @@ defmodule Task2Test do
       assert results == [11, "heloo", "Cant handle this"]
     end
 
-  @tag mustexec: true
+  #@tag mustexec: true
     test "min 3 test" do
       import :timer
       #Spawns an actor that spawns another monitored actor and cheks if the child actor doesnt die
@@ -41,7 +41,7 @@ defmodule Task2Test do
       sleep(700)
     end
 
-  @tag mustexec: true
+  #@tag mustexec: true
     test "min 4 test" do
       #Spawns an actor for a function that takes numbers as arguments
       pid = spawn(Task2, :averager, [0])
@@ -51,7 +51,7 @@ defmodule Task2Test do
       send(pid, 10)
     end
 
-  @tag mustexec: true
+  #@tag mustexec: true
     test "main 1 test" do
       pid = Task2.new_queue()
       IO.puts(Task2.push(pid, 42))
@@ -60,7 +60,7 @@ defmodule Task2Test do
       assert v == 42
     end
 
-   @tag mustexec: true
+   #@tag mustexec: true
     test "main 2 test" do
       import :timer
       pid = Task2Semaphore.createSemaphore()
@@ -70,7 +70,7 @@ defmodule Task2Test do
       sleep(10000)
     end
 
-    @tag mustexec: true
+    #@tag mustexec: true
     test "bonus 1 test" do
       nd = Task2scheduler.create_scheduler()
       send(nd, :create)
@@ -81,7 +81,7 @@ defmodule Task2Test do
       sleep(10000)
     end
 
-    @tag mustexec: true
+    #@tag mustexec: true
     test "bonus 2 test" do
       dll = Task2dll.create_dll([3, 4, 5, 42])
       IO.inspect(dll)
