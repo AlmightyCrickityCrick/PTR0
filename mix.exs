@@ -14,7 +14,10 @@ defmodule Task1.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger]
+      extra_applications: [:logger],
+     mod: {Task4BonusApp, []}
+     # mod: {Task4App, []}
+
     ]
   end
 
@@ -23,6 +26,11 @@ defmodule Task1.MixProject do
     [
       # {:dep_from_hexpm, "~> 0.3.0"},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
+      {:httpoison, "~> 2.0"},
+      {:floki, "~> 0.20.0"},
+      {:poison, "~> 5.0"},
+      {:oauth2, "~> 2.0"},
+      {:plug_cowboy, "~> 2.0"}
     ]
   end
 end

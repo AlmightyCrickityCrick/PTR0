@@ -2,7 +2,7 @@ defmodule Task3Test do
   alias Week4.Task3main
   use ExUnit.Case
 
-@tag mustexec: true
+#@tag mustexec: true
   test "minimal" do
     import :timer
 
@@ -26,7 +26,7 @@ defmodule Task3Test do
     send(List.first(lst2), :kill)
   end
 
-  @tag mustexec: true
+  #@tag mustexec: true
   test "main" do
     import :timer
     pid = spawn(Task3Main, :init_supervisor, [])
@@ -36,14 +36,14 @@ defmodule Task3Test do
     sleep(500)
   end
 
-  @tag mustexec: true
+  #@tag mustexec: true
   test "bonus1" do
     import :timer
     pid = spawn(Task3Bonus1, :init_senzors, [])
     sleep(10000)
   end
 
-  @tag mustexec: true
+  #@tag mustexec: true
   test "bonus2" do
     import :timer
     pid = spawn(Task3Bonus2, :init_interogation, [])
